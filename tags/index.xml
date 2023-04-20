@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Yuntao&#39;Blog</title>
+    <link>https://blog.zealscott.com/tags/</link>
+    <description>Recent content in Tags on Yuntao&#39;Blog</description>
+    <image>
+      <url>https://blog.zealscott.com/papermod-cover.png</url>
+      <link>https://blog.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Aug 2019 21:00:30 +0800</lastBuildDate><atom:link href="https://blog.zealscott.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>deep learning</title>
+      <link>https://blog.zealscott.com/tags/deep-learning/</link>
+      <pubDate>Sat, 17 Aug 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://blog.zealscott.com/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paper</title>
+      <link>https://blog.zealscott.com/tags/paper/</link>
+      <pubDate>Sat, 17 Aug 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://blog.zealscott.com/tags/paper/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yuntao&#39;Blog</title>
+    <link>https://blog.zealscott.com/</link>
+    <description>Recent content on Yuntao&#39;Blog</description>
+    <image>
+      <url>https://blog.zealscott.com/papermod-cover.png</url>
+      <link>https://blog.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Aug 2019 21:00:30 +0800</lastBuildDate><atom:link href="https://blog.zealscott.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PU learning Overview</title>
+      <link>https://blog.zealscott.com/pu-learning-overview/</link>
+      <pubDate>Sat, 17 Aug 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://blog.zealscott.com/pu-learning-overview/</guid>
+      <description>Papers  Learning Classiﬁers from Only Positive and Unlabeled Data KDD 2008 （PUAdapter）  经典论文，在SCAR假设下，证明了$p(y|x)$与$p(s|x)$只相差一个常数c，因此可以使用经典的分类模型，将positive和unlabel数据看成两类，直接得到$p(s|x)$的概率，进而估计$p(y|x)$。同时给出了估计常数$c$和先验$p(y)$的方法。 本文还提出了一个非常重要的思想，就是把Unlabel数据看成是Positive和Negative样本的不同权重组合，引出了后来的unbiased risk estimators。 Code available 论文笔记   Analysis of Learning from Positive and Unlabeled Data NIPS 2014  从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式。详细推导了risk function：$R(f) = 2\pi R_1(f) + R_X(f) -\pi $，论文以这个risk function出发，对不同的loss function进行了讨论。（部分推导可结合 Semi-Supervised Novelty Detection 再看） 同时证明了如果使用凸函数hinge loss作为loss function，会导致错误的分类边界（多一项惩罚项），因此需要使用非凸ramp loss作为loss function。同时证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍（这里待看）。  即loss需要满足 $l(t,+1) + l(t,-1) = 1$，也就是symmetric condition   论文笔记   Convex formulation for learning from positive and unlabeled data IMCL 2015 （uPU）  这篇文章主要是对之前提出的非凸loss进行改进，主要想法是根据risk function对正类样本和未标记样本使用不同的loss function。 从另一个方面推导了risk function： $R(g) = \pi E_1[ \hat{l}(g(x))] + E_X[l(-g(x))]$，考虑当$\hat{l}$为凸时，证明了其一定为线性函数，将hinge loss修改为double hinge loss，变为凸优化问题。通过实验说明其效果不比non-convex loss function差，同时减少了计算开销。  即loss需要满足$l(t,+1) + l(t,-1) = -t$，也就是linear-odd condition   同时，这篇文章用的分类器为linear-in-parameter model，使用高斯核将样本映射到feature space，具体定义可以参考 Introduction to Statistical Machine Learning By Masashi Sugiyama 2016 一书的Chapter21。 Code available 论文笔记   Positive-Unlabeled Learning with Non-Negative Risk Estimator NIPS 2017 （nnPU）  由于之前的risk estimator $\hat{R}_{pu}(g) = \pi_p\hat{R}_p^+(g) -\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g)$中，有可能出现$-\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g) &amp;lt; 0 $的情况，会导致risk不断减小变为负数。因此对risk进行改写，提出nnPU，能有效的防止过拟合，能使用更强大的学习器（神经网络）进行学习。同时，论文对这个risk estimator的bias，consistency和MSE reduction进行了理论分析。 Code available   Learning from positive and unlabeled data with a selection bias ICLR 2019 （nnPUSB）  放松了SCAR的假设，认为如果$P(o = +1| x)$越高，则$P(y = +1| x)$也越高（不一定相同）。使用贝叶斯公式得到密度比和$P(y = +1|x)$满足同样的偏序关系，因此使用两种方法估计密度比（risk function/uLSIF），并设定阈值实现对PU的分类。 Code available / My implementation 论文笔记    Formula Risk 推导  定义在decision function $g$ 下的risk为：  $R(g) = E_{(X,Y)\sim p(x,y)}[l(g(X),Y)] = \pi_pR_p^+(g) + \pi_nR_n^-(g)$ 其中$R_p^+(g) = E_p[l(g(X)),+1]$也就是对正类分类错误的risk，$R_n^-(g) = E_p[l(g(X)),-1]$也就是对负类分类错误的risk   由于我们没有办法直接得到负类样本，因此由公式 $\pi_np_n(x) = p(x) - \pi_pp_p(x)$可得负类样本分类错误的损失：   $\pi R_n^-(g) = R_u^-(g) - \pi_pR_p^-(g)$</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
