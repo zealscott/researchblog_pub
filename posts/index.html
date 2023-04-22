@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Posts | Yuntao&#39;Blog</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="Posts - Yuntao&#39;Blog">
-<meta name="author" content="Scott Du">
-<link rel="canonical" href="https://blog.zealscott.com/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<meta name="author" content="Yuntao Du">
+<link rel="canonical" href="https://blog.zealscott.com/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.20ccdcb7aa2c31c4caca17ae400b3b085d12f6ea629a588ebd4090a3c4dd7f52.css" integrity="sha256-IMzct6osMcTKyheuQAs7CF0S9upimliOvUCQo8Tdf1I=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://blog.zealscott.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blog.zealscott.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://blog.zealscott.com/favicon-32x32.png">
@@ -83,7 +83,7 @@ if (!doNotTrack) {
 }
 </script>
 <meta property="og:title" content="Posts" />
-<meta property="og:description" content="The research blog of zealscott" />
+<meta property="og:description" content="The research blog of Yuntao Du" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.zealscott.com/posts/" /><meta property="og:image" content="https://blog.zealscott.com/papermod-cover.png"/>
 
@@ -91,7 +91,7 @@ if (!doNotTrack) {
 <meta name="twitter:image" content="https://blog.zealscott.com/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="The research blog of zealscott"/>
+<meta name="twitter:description" content="The research blog of Yuntao Du"/>
 
 
 <script type="application/ld+json">
@@ -126,14 +126,14 @@ if (!doNotTrack) {
     <nav class="nav">
         <div class="logo">
             <a href="https://blog.zealscott.com" accesskey="h" title="Yuntao&#39;Blog (Alt + H)">Yuntao&#39;Blog</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -147,7 +147,7 @@ if (!doNotTrack) {
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
@@ -170,6 +170,17 @@ if (!doNotTrack) {
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://zealscott.com" title="Homepage">
+                    <span>Homepage</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -180,14 +191,15 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>PU learning Overview
+    <h2>LDPTarce: Locally Differentially Private Trajectory Synthesis
     </h2>
   </header>
   <section class="entry-content">
-    <p>Papers  Learning Classiﬁers from Only Positive and Unlabeled Data KDD 2008 （PUAdapter）  经典论文，在SCAR假设下，证明了$p(y|x)$与$p(s|x)$只相差一个常数c，因此可以使用经典的分类模型，将positive和unlabel数据看成两类，直接得到$p(s|x)$的概率，进而估计$p(y|x)$。同时给出了估计常数$c$和先验$p(y)$的方法。 本文还提出了一个非常重要的思想，就是把Unlabel数据看成是Positive和Negative样本的不同权重组合，引出了后来的unbiased risk estimators。 Code available 论文笔记   Analysis of Learning from Positive and Unlabeled Data NIPS 2014  从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式。详细推导了risk function：$R(f) = 2\pi R_1(f) &#43; R_X(f) -\pi $，论文以这个risk function出发，对不同的loss function进行了讨论。（部分推导可结合 Semi-Supervised Novelty Detection 再看） 同时证明了如果使用凸函数hinge loss作为loss function，会导致错误的分类边界（多一项惩罚项），因此需要使用非凸ramp loss作为loss function。同时证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍（这里待看）。  即loss需要满足 $l(t,&#43;1) &#43; l(t,-1) = 1$，也就是symmetric condition   论文笔记   Convex formulation for learning from positive and unlabeled data IMCL 2015 （uPU）  这篇文章主要是对之前提出的非凸loss进行改进，主要想法是根据risk function对正类样本和未标记样本使用不同的loss function。 从另一个方面推导了risk function： $R(g) = \pi E_1[ \hat{l}(g(x))] &#43; E_X[l(-g(x))]$，考虑当$\hat{l}$为凸时，证明了其一定为线性函数，将hinge loss修改为double hinge loss，变为凸优化问题。通过实验说明其效果不比non-convex loss function差，同时减少了计算开销。  即loss需要满足$l(t,&#43;1) &#43; l(t,-1) = -t$，也就是linear-odd condition   同时，这篇文章用的分类器为linear-in-parameter model，使用高斯核将样本映射到feature space，具体定义可以参考 Introduction to Statistical Machine Learning By Masashi Sugiyama 2016 一书的Chapter21。 Code available 论文笔记   Positive-Unlabeled Learning with Non-Negative Risk Estimator NIPS 2017 （nnPU）  由于之前的risk estimator $\hat{R}_{pu}(g) = \pi_p\hat{R}_p^&#43;(g) -\pi_p\hat{R}_p^-(g) &#43; \hat{R}_u^-(g)$中，有可能出现$-\pi_p\hat{R}_p^-(g) &#43; \hat{R}_u^-(g) &lt; 0 $的情况，会导致risk不断减小变为负数。因此对risk进行改写，提出nnPU，能有效的防止过拟合，能使用更强大的学习器（神经网络）进行学习。同时，论文对这个risk estimator的bias，consistency和MSE reduction进行了理论分析。 Code available   Learning from positive and unlabeled data with a selection bias ICLR 2019 （nnPUSB）  放松了SCAR的假设，认为如果$P(o = &#43;1| x)$越高，则$P(y = &#43;1| x)$也越高（不一定相同）。使用贝叶斯公式得到密度比和$P(y = &#43;1|x)$满足同样的偏序关系，因此使用两种方法估计密度比（risk function/uLSIF），并设定阈值实现对PU的分类。 Code available / My implementation 论文笔记    Formula Risk 推导  定义在decision function $g$ 下的risk为：  $R(g) = E_{(X,Y)\sim p(x,y)}[l(g(X),Y)] = \pi_pR_p^&#43;(g) &#43; \pi_nR_n^-(g)$ 其中$R_p^&#43;(g) = E_p[l(g(X)),&#43;1]$也就是对正类分类错误的risk，$R_n^-(g) = E_p[l(g(X)),-1]$也就是对负类分类错误的risk   由于我们没有办法直接得到负类样本，因此由公式 $\pi_np_n(x) = p(x) - \pi_pp_p(x)$可得负类样本分类错误的损失：   $\pi R_n^-(g) = R_u^-(g) - \pi_pR_p^-(g)$...</p>
+    <p>This is the gentle introduction to our work which will be represented at VLDB 2023. Code and datasets are available at Github.
+Introduction Trajectory data is widely used for many real-world applications, such as tracking the spread of the disease through people’s movement patterns and providing personalized location-based services based on travel preference. However, privacy concerns and data protection regulations have limited the extent to which this data is shared and utilized....</p>
   </section>
-  <footer class="entry-footer"><span title='2019-08-17 21:00:30 +0800 CST'>August 17, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
-  <a class="entry-link" aria-label="post link to PU learning Overview" href="https://blog.zealscott.com/pu-learning-overview/"></a>
+  <footer class="entry-footer"><span title='2023-04-22 08:00:30 +0800 CST'>April 22, 2023</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Yuntao Du</footer>
+  <a class="entry-link" aria-label="post link to LDPTarce: Locally Differentially Private Trajectory Synthesis" href="https://blog.zealscott.com/2023-04-22-ldptrace/"></a>
 </article>
     </main>
     
@@ -196,7 +208,7 @@ if (!doNotTrack) {
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

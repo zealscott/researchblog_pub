@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Yuntao&#39;Blog</title>
-    <link>https://blog.zealscott.com/posts/</link>
-    <description>Recent content in Posts on Yuntao&#39;Blog</description>
+    <title>data synthesis on Yuntao&#39;Blog</title>
+    <link>https://blog.zealscott.com/tags/data-synthesis/</link>
+    <description>Recent content in data synthesis on Yuntao&#39;Blog</description>
     <image>
       <title>Yuntao&#39;Blog</title>
       <url>https://blog.zealscott.com/papermod-cover.png</url>
       <link>https://blog.zealscott.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Apr 2023 08:00:30 +0800</lastBuildDate><atom:link href="https://blog.zealscott.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Apr 2023 08:00:30 +0800</lastBuildDate><atom:link href="https://blog.zealscott.com/tags/data-synthesis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LDPTarce: Locally Differentially Private Trajectory Synthesis</title>
       <link>https://blog.zealscott.com/2023-04-22-ldptrace/</link>
